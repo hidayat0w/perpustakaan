@@ -12,6 +12,9 @@
 
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="{{asset('assets/modules/izitoast/css/iziToast.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/modules/datatables/datatables.min.css')}}">
+  <link rel="stylesheet" href="{{asset('assets/modules/datatables/Datatables-1.10.16/css/dataTables.bootstrap4.min.css')}}">
+
 
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
@@ -75,6 +78,8 @@
   <script src="{{asset('assets/modules/sweetalert/sweetalert.min.js')}}"></script>
 
   <!-- Page Specific JS File -->
+  <script src="{{asset('assets/modules/datatables/datatables.min.js')}}"></script>
+  <script src="{{asset('assets/modules/datatables/Datatables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
 
   <!-- Template JS File -->
   <script src="assets/js/scripts.js"></script>
@@ -82,7 +87,7 @@
 
   <script>
     @if (session('sukses'))
-        iziToast.success({
+        iziToast.success({jgiswjgwjggj8ep0fskfpofowfjslfsdhfsdfhssi
             title: 'Berhasil',
             message: '{{session('sukses')}}',
             position: 'topRight'

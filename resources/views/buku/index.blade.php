@@ -1,20 +1,20 @@
 @extends('layout.app')
 
-@section('title, Anggota')
+@section('title, buku')
 
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h4>Anggota</h4>
+            <h4>Buku</h4>
         </div>
 
         <div class="section-body">
             <div class="card">
                 <div class="card-header">
-                    <h4>Anggota</h4>
+                    <h4>Buku</h4>
 
                     <div class="card-header-form">
-                        <a href="{{route('anggota.create')}}" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Tambah Data</a>
+                        <a href="{{route('buku.create')}}" class="btn btn-success btn-sm"><i class="fa fa-plus"></i> Tambah Data</a>
                     </div>
                 </div>
 
@@ -23,34 +23,43 @@
                         <thead>
                             <tr>
                                 <th style="width:10%">#</th>
-                                <th>Foto</th>
-                                <th>Kode</th>
-                                <th>Nama</th>
-                                <th>Jenis Kelamin</th>
-                                <th>Tempat Lahir</th>
-                                <th>Tanggal Lahir</th>
-                                <th>Nomor Telepon</th>
-                                <th>Alamat</th>
+                                <th>Gambar</th>
+                                <th>Judul</th>
+                                <th>Kategori</th>
+                                <th>Penerbit</th>
+                                <th>ISBN</th>
+                                <th>Pengarang</th>
+                                <th>Jumlah Halaman</th>
+                                <th>Stok</th>
+                                <th>Tahun Terbit</th>
+                                <th>Sinopsis</th>
+                                <th>Gambar</th>
                                 <th style="width:15%">Aksi</th>
                             </tr>
                         </thead>
 
                         <tbody>
-                            @foreach ($anggota as $agt)
+                            @foreach ($buku as $bk)
                                 <tr>
                                     <td>{{($loop->iteration)}}</td>
-                                    <td><img src="{{asset('/storage/anggota/'.$agt->foto)}}" class="rounded" style="width: 200px"></td>
-                                    <td>{{$agt->kode}}</td>
-                                    <td>{{$agt->nama}}</td>
-                                    <td>{{$agt->jenis_kelamin}}</td>
-                                    <td>{{$agt->tempat_lahir}}</td>
-                                    <td>{{$agt->tanggal_lahir}}</td>
-                                    <td>{{$agt->telpon}}</td>
-                                    <td>{{$agt->alamat}}</td>
+                                    <td>{!! DNS1D::getBarcodeHTML('$' . $bk->kode, 'C39+', 1, 25) !!}
+                                        {{-- Parameter terakhir: panjang barcode --}}
+                                        <div style="margin-top: 5px;">{{$bk->kode}}</div></td>
+                                    <td>{{$bk->judul}}</td>
+                                    <td>{{$bk->kategori_id}}</td>
+                                    <td>{{$bk->penerbit_id}}</td>
+                                    <td>{{$bk->isbn}}</td>
+                                    <td>{{$bk->pengarang}}</td>
+                                    <td>{{$bk->jumlah_halaman}}</td>
+                                    <td>{{$bk->stok}}</td>
+                                    <td>{{$bk->tahun_terbit}}</td>
+                                    <td>{{$bk->sinopsis}}</td>
+                                    <td><img src="{{asset('/storage/buku/'.$bk->gambar)}}" class="rounded" style="width: 150px"></td>
+
                                     <td>
-                                        <form action="{{route('anggota.destroy', $agt->id)}}" method="GET" id="delete-form">
+                                        <form action="{{route('buku.destroy', $bk->id)}}" method="GET" id="delete-form">
                                             @method('delete')
-                                            <a href="{{route('anggota.edit', $agt->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
+                                            <a href="{{route('buku.edit', $bk->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                             <button class="btn btn-sm btn-danger fa fa-trash" onclick="confirmDelete()"></button>
                                         </form>
                                     </td>

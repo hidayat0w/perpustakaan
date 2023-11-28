@@ -19,7 +19,7 @@
                 </div>
 
                 <div class="card-body">
-                    <table class="table table-hover">
+                    <table class="table table-hover" id="table">
                         <thead>
                             <th>#</th>
                             <th>Kode</th>
@@ -52,6 +52,13 @@
 @endsection
 
 @push('script')
+
+        <script>
+            $(document).ready(function () {
+                $('#table').DataTable();
+            });
+        </script>
+
         <script>
             function confirmDelete()
             {

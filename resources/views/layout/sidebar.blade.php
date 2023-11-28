@@ -9,7 +9,7 @@
       <ul class="sidebar-menu">
         <li class="menu-header">Dashboard</li>
         <li class="">
-          <a href="#" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+          <a href="/dashboard" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
         </li>
         <li class="menu-header">Master</li>
         <li class="">
@@ -22,7 +22,7 @@
             <a href="{{route('anggota.index')}}" class="nav-link"><i class="fas fa-users"></i><span>Anggota</span></a>
           </li>
           <li class="">
-            <a href="#" class="nav-link"><i class="fas fa-book"></i><span>Buku</span></a>
+            <a href="{{route('buku.index')}}" class="nav-link"><i class="fas fa-book"></i><span>Buku</span></a>
           </li>
           <li class="menu-header">Transaksi</li>
           <li class="">

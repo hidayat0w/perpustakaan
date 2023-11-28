@@ -11,4 +11,8 @@ class penerbit extends Model
 
     protected $table =
         'penerbits';
+
+    public function buku(){
+        return $this->hasMany(Buku::class);
+    }
 }

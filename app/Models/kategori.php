@@ -11,4 +11,8 @@ class kategori extends Model
 
     protected $table =
         'kategoris';
+
+        public function buku(){
+            return $this->hasMany(Buku::class);
+        }
 }
