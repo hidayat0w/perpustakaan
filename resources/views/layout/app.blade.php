@@ -80,20 +80,23 @@
   <!-- Page Specific JS File -->
   <script src="{{asset('assets/modules/datatables/datatables.min.js')}}"></script>
   <script src="{{asset('assets/modules/datatables/Datatables-1.10.16/js/dataTables.bootstrap4.min.js')}}"></script>
+  <script src="{{asset('assets/modules/izitoast/js/iziToast.min.js')}}"></script>
 
   <!-- Template JS File -->
   <script src="assets/js/scripts.js"></script>
   <script src="assets/js/custom.js"></script>
 
-  <script>
+
     @if (session('sukses'))
-        iziToast.success({jgiswjgwjggj8ep0fskfpofowfjslfsdhfsdfhssi
-            title: 'Berhasil',
-            message: '{{session('sukses')}}',
-            position: 'topRight'
-        });
+        <script>
+            iziToast.success({
+                title: 'Berhasil',
+                message: '{{session('sukses')}}',
+                position: 'topRight'
+            });
+        </script>
     @endif
-  </script>
+
 
   @stack('script')
 </body>

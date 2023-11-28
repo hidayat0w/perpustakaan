@@ -45,9 +45,9 @@ class AnggotaController extends Controller
     public function destroy($id)
     {
         $anggota = Anggota::find($id);
-        $anggota->delete();
+        $anggota->delete($id);
 
-        return redirect('anggota.index')->with('sukses', 'Data Berhasil Dihapus');
+        return redirect('anggota')->with('sukses', 'Data Berhasil Dihapus');
     }
 
     public function edit($id)

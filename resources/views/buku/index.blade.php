@@ -57,8 +57,10 @@
                                     <td><img src="{{asset('/storage/buku/'.$bk->gambar)}}" class="rounded" style="width: 150px"></td>
 
                                     <td>
-                                        <form action="{{route('buku.destroy', $bk->id)}}" method="GET" id="delete-form">
+                                        <form action="{{route('buku.destroy', $bk->id)}}" method="POST" id="delete-form">
+                                            {{-- <form action="/buku/{{$bk->id}}" method="POST" id="delete-form{{$bk->id}}"> --}}
                                             @method('delete')
+                                            @csrf
                                             <a href="{{route('buku.edit', $bk->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                             <button class="btn btn-sm btn-danger fa fa-trash" onclick="confirmDelete()"></button>
                                         </form>
@@ -84,7 +86,7 @@
 
 
         <script>
-            function confirmDelete()
+            function confirmDelete(delete-form)
             {
                 event.preventDefault();
                 swal({

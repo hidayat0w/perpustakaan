@@ -48,8 +48,9 @@
                                     <td>{{$agt->telpon}}</td>
                                     <td>{{$agt->alamat}}</td>
                                     <td>
-                                        <form action="{{route('anggota.destroy', $agt->id)}}" method="GET" id="delete-form">
+                                        <form action="{{route('anggota.destroy', $agt->id)}}" method="POST" id="delete-form{{$agt->id}}">
                                             @method('delete')
+                                            @csrf
                                             <a href="{{route('anggota.edit', $agt->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
                                             <button class="btn btn-sm btn-danger fa fa-trash" onclick="confirmDelete()"></button>
                                         </form>
@@ -75,7 +76,7 @@
 
 
         <script>
-            function confirmDelete()
+            function confirmDelete(delete-form)
             {
                 event.preventDefault();
                 swal({
