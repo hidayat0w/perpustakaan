@@ -58,6 +58,8 @@ class AnggotaController extends Controller
 
     public function update(Request $request, $id)
     {
+        $image = $request->file('foto');
+        $image ->storeAs('public/anggota',$image->hashName());
         $anggota = Anggota::find($id);
         $anggota->kode = $request->kode;
         $anggota->nama = $request->nama;
@@ -65,8 +67,8 @@ class AnggotaController extends Controller
         $anggota->tempat_lahir = $request->tempat_lahir;
         $anggota->tanggal_lahir = $request->tanggal_lahir;
         $anggota->telpon = $request->telpon;
-        // $anggota->alamat = $request->alamat;
-        $anggota->foto = $request->foto;
+        $anggota->alamat = $request->alamat;
+        $anggota->foto = $image->hashName();
         $anggota->update();
 
         return redirect('anggota')->with('edit','Edit Berhasil Hore');

@@ -52,7 +52,7 @@
                                             @method('delete')
                                             @csrf
                                             <a href="{{route('anggota.edit', $agt->id)}}" class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></a>
-                                            <button class="btn btn-sm btn-danger fa fa-trash" onclick="confirmDelete()"></button>
+                                            <button class="btn btn-sm btn-danger fa fa-trash" onclick="confirmDelete('delete-form')"></button>
                                         </form>
                                     </td>
                                 </tr>

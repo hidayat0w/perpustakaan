@@ -37,7 +37,7 @@
 
                     <div class="row">
                         <div class="form-group col-md-6">
-                            <label for="jenis_kelamin">Jenis Kelamin</label>
+                            <label for="jenis_kelamin">Kelamin</label>
                             <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" value="{{$anggota->jenis_kelamin}}">
                                 <option value="laki-laki">Laki-laki</option>
                                 <option value="perempuan">Perempuan</option>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group col-md-6">
-                            <label for="telpon">Telphone</label>
+                            <label for="telpon">Nomor Telepon</label>
                             <input type="number" name="telpon" id="telpon" class="form-control" value="{{$anggota->telpon}}">
                         </div>
 
@@ -70,7 +70,7 @@
 
                     </div>
                     <!-- <button type="submit" class="btn btn-primary"><i class="fa fa-book-">Simpan Data </button> -->
-                    <button type="submit" class="btn btn-md btn-success"><i class="fa fa-save"></i> Update</button>
+                    <button type="submit" class="btn btn-md btn-success"><i class="fa fa-otter"> Update</i></button>
                 </div>
                 </form>
             </div>
